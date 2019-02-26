@@ -8,7 +8,7 @@
         <?PHP
             $user = '';
             $pass = '';
-            $connstr = '';
+            $connstr = ' ';
 
             $conn = oci_connect($user, $pass, $connstr);
             if(!$conn){
