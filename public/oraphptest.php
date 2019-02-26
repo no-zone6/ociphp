@@ -6,9 +6,9 @@
     <body>
         <h1>Oracle PHP接続テスト</h1>
         <?PHP
-            $user = '';
-            $pass = '';
-            $connstr = '';
+            $user = 'system';
+            $pass = 'Welcome1__Orcl1';
+            $connstr = 'oradbaas1.privatesubnettg.nonuma01vcn01.oraclevcn.com:1521/oradbaas_phx1ss.privatesubnettg.nonuma01vcn01.oraclevcn.com';
 
             $conn = oci_connect($user, $pass, $connstr);
             if(!$conn){
