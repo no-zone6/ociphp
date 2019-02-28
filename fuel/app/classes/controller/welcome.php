@@ -29,7 +29,10 @@ class Controller_Welcome extends Controller
 	 */
 	public function action_index()
 	{
-		return Response::forge(View::forge('welcome/index'));
+//		return Response::forge(View::forge('welcome/index'));
+		$data = array();
+		$data['name'] = '大沼';
+		return Response:forge(View::forge('welcome/test',$data));
 	}
 
 	/**
