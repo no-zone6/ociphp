@@ -32,7 +32,7 @@ class Controller_Welcome extends Controller
 //		return Response::forge(View::forge('welcome/index'));
 		$data = array();
 		$data['name'] = '大沼';
-		return Response:forge(View::forge('welcome/test',$data));
+		return Response::forge(View::forge('welcome/test',$data));
 	}
 
 	/**
