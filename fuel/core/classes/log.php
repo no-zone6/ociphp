@@ -67,12 +67,16 @@ class Log
 		$path = \Config::get('log_path', APPPATH.'logs'.DS);
 
 		// and make sure it exsts
-		if ( ! is_dir($path) or ! is_writable($path))
+		if ( ! is_dir($path))
 		{
 			\Config::set('log_threshold', \Fuel::L_NONE);
 			throw new \FuelException('Unable to create the log file. The configured log path "'.$path.'" does not exist.');
 		}
-
+		if ( ! is_writable($path))
+		{
+			\Config::set('log_threshold', \Fuel::L_NONE);
+			throw new \FuelException('Unable to create the log file. The configured log path "'.$path.'" is not writable.');
+		}
 		// determine the name of the logfile
 		$filename = \Config::get('log_file', null);
 		if (empty($filename))
